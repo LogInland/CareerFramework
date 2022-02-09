@@ -9,6 +9,24 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="5" />
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="5" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="5" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="5" />
+        </Grid.RowDefinitions>
+        <Image Grid.Column="1" Grid.Row="1" Source="/Assets/PCLogo.png"
+               x:Name="image_PCLogo" Stretch="None" Margin="5"/>
+        <TextBlock Text="Trainee" Grid.Column="2" Grid.Row="1" Margin="5" />
     </Grid>
 </Page>

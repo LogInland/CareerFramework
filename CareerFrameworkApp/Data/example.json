@@ -1,0 +1,38 @@
+{
+   "Property":[
+      {
+         "name":"Tech Stack",
+         "Option":[
+            {
+               "title":"Awareness",
+               "value":"1"
+            },
+            {
+               "title":"Foundation",
+               "value":"2"
+            },
+            {
+               "title":"Intermediate",
+               "value":"3"
+            }
+         ]
+      },
+      {
+         "name":"Business knowledge",
+         "Option":[
+            {
+               "title":"No knowledge",
+               "value":"0"
+            },
+            {
+               "title":"Advanced",
+               "value":"1"
+            },
+            {
+               "title":"Fundamental awareness",
+               "value":"2"
+            }
+         ]
+      }
+   ]
+}

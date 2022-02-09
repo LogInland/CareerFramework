@@ -1,10 +1,13 @@
-﻿using System;
+﻿using CareerFrameworkApp.src;
+using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -25,6 +28,35 @@ namespace CareerFrameworkApp
         public MainPage()
         {
             this.InitializeComponent();
+            LoadJson();
+        }
+
+        public void LoadJson()
+        {
+            string fileName = "example.json";
+            var path = Path.Combine(Environment.CurrentDirectory, @"Data\", fileName);
+            Console.WriteLine(path);
+            using (StreamReader r = new StreamReader(path))
+            {
+                string json = r.ReadToEnd();
+                deserialiseJSON(json);
+                //List<Property> items = JsonConvert.DeserializeObject<List<Property>>(json);
+            }
+        }
+
+        private void deserialiseJSON(string strJSON)
+        {
+            try
+            {
+                var jProperty = JsonConvert.DeserializeObject<Property>(strJSON);
+                MessageDialog message = new MessageDialog("Tuscia");
+                message.ShowAsync();
+                //Console.WriteLine(jProperty);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
         }
     }
 }
