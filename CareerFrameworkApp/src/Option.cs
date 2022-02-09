@@ -3,12 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
 
 namespace CareerFrameworkApp.src
-{
-    internal class Option
+{   
+    [Serializable]
+    public class option
     {
-        public string title { get; set; }
-        public int value { get; set; }
+        [JsonProperty(PropertyName = "title")]
+        public string Title { get; set; }
+        [JsonProperty(PropertyName = "value")]
+        public string Value { get; set; }
     }
 }
