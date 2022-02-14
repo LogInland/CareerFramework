@@ -23,18 +23,17 @@ namespace CareerFrameworkApp.src
             return await openPicker.PickSingleFileAsync();
         }
 
-        public string LoadJson(string path)
+        public async Task<Employee> getEmployee()
         {            
-            using (StreamReader r = new StreamReader(path))
+            StorageFile file = await findFile();
+            string fileString;
+            var stream = await file.OpenReadAsync();
+            using (StreamReader reader = new StreamReader(stream.AsStream()))
             {
-                return r.ReadToEnd();                               
+                fileString = reader.ReadToEnd();
             }
-        }
-
-        public Employee getEmployee()
-        {            
-            StorageFile file = findFile().Result;
-            return deserializeEmployee(LoadJson(file.Path));
+            
+            return deserializeEmployee(fileString);
         }
 
         private Employee deserializeEmployee(String json)

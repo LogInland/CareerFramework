@@ -22,6 +22,7 @@
             <RowDefinition Height="auto" />
             <RowDefinition Height="auto" />
             <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
             <RowDefinition Height="*" />
             <RowDefinition Height="5" />
         </Grid.RowDefinitions>
@@ -32,19 +33,5 @@
         <TextBlock Text="New Level" Grid.Column="2" Grid.Row="1" Margin="10" FontSize="40"/>
         <Button Content="Load Employee JSON File" Margin="10" Click="loadFile_Click" Grid.Column="4" 
                 Grid.Row="1"/>
-
-        <TextBlock Text="Stack Level" Grid.Column="0" Grid.Row="2" Margin="10" FontSize="30"
-                   VerticalAlignment="Center" HorizontalAlignment="Center" />
-        <TextBlock Text="Good " Grid.Column="1" Grid.Row="2" Margin="10" FontSize="30" VerticalAlignment="Center"
-                   HorizontalAlignment="Center"/>
-        <ComboBox Grid.Row="2" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center">
-            <ComboBoxItem>
-                Item1
-            </ComboBoxItem>
-            <ComboBoxItem>
-                Item2
-            </ComboBoxItem>
-        </ComboBox>
-
     </Grid>
 </Page>
